@@ -20,7 +20,7 @@ const Rayout = ({ children }) => {
       <div className="container max-w-screen-md mx-auto px-5">
         <header className="mt-10 mb-20">
             <h1 className="text-2xl text-center mb-2"><Link to="/" className="text-inherit">{siteTitle}</Link></h1>
-            <p className="text-center">R6予備試験短答まであと<span className="text-red-500">{Math.floor((new Date('2024/07/14 09:00:00').getTime() - new Date().getTime())/(1000*60*60*24))}</span>日</p>
+            <p className="text-center">R6予備試験短答まであと<span className="text-red-500">{Math.floor((new Date('2024/07/14 00:00:00').getTime() - new Date().getTime())/(1000*60*60*24))}</span>日</p>
         </header>
         <main className="">
             {children}
