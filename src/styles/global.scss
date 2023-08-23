@@ -13,31 +13,31 @@ a {
 .blog-content {
 
 	h1 {
-		@apply font-sans text-2xl font-bold mb-5 mt-10;
+		@apply font-sans text-2xl font-bold mb-6 mt-10;
 	}
 	
 	h2 {
-		@apply font-sans text-xl font-bold mb-5 mt-10;
+		@apply font-sans text-xl font-bold mb-6 mt-10;
 	}
 
 	h3 {
-		@apply font-sans text-lg font-bold mb-5 mt-10;
+		@apply font-sans text-lg font-bold mb-6 mt-10;
 	}
 
 	h4 {
-		@apply font-sans font-bold mb-5 mt-5;
+		@apply font-sans font-bold mb-6 mt-5;
 	}
 
 	h5 {
-		@apply font-sans font-semibold mb-5;
+		@apply font-sans font-semibold mb-6;
 	}
 
 	h6 {
-		@apply font-sans font-medium mb-5;
+		@apply font-sans font-medium mb-6;
 	}
 
 	p {
-		@apply mb-5 leading-loose;
+		@apply mb-6 leading-loose;
 	}
 
 	a {
@@ -57,7 +57,7 @@ a {
 	}
 
 	blockquote {
-		@apply pl-8 py-3 mb-5 text-slate-800 bg-gray-200;
+		@apply pl-8 py-3 pr-3 mb-6 text-slate-800 bg-gray-100;
 		border-left: 3px solid rgb(156 163 175);
 		position: relative;
 
@@ -74,7 +74,7 @@ a {
 	}
 
 	table {
-		@apply mb-5;
+		@apply mb-6;
 		border-top: 1px solid rgb(2 6 23);
 		border-bottom: 1px solid rgb(2 6 23);
 
@@ -88,7 +88,7 @@ a {
 	}
 
 	pre {
-		@apply p-3 rounded-md mb-5 overflow-x-auto;
+		@apply p-3 rounded-md mb-6 overflow-x-auto;
 
 		code {
 			@apply font-mono;
@@ -100,7 +100,7 @@ a {
 	}
 
 	ul {
-		@apply list-disc mb-5 ml-10 leading-loose;
+		@apply list-disc mb-6 ml-10 leading-loose;
 
 		ul {
 			@apply mb-0 ml-5;
@@ -109,11 +109,15 @@ a {
 	}
 
 	ol { 
-		@apply list-decimal mb-5 ml-5 leading-loose;
+		@apply list-decimal mb-6 ml-5 leading-loose;
 		
 		ol {
 			@apply mb-0 ml-5;
 			list-style-type: lower-alpha;
 		}
+	}
+
+	.gatsby-resp-image-wrapper {
+		@apply mb-6;
 	}
 }
