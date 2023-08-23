@@ -3,6 +3,7 @@ import Rayout from '../components/rayout'
 import { graphql, Link } from "gatsby"
 import Seo from '../components/seo'
 import Bio from '../components/bio'
+import moment from 'moment'
 
 const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
 
@@ -12,10 +13,10 @@ const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
         <Rayout>
             <div className="blog-header my-10">
                 <h1 className="text-3xl text-center">{post.frontmatter.title}</h1>
-                <p className="text-slate-500 text-center">{post.frontmatter.date}</p>
+                <p className="text-slate-500 text-center">{moment(post.frontmatter.date).format(`YYYY-MM-DD`)}</p>
             </div>
 
-            <div className="blog-content">
+            <div className="blog-content overflow-x-auto">
                 {children}
             </div>
 
@@ -33,7 +34,7 @@ const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
                 <div className="text-right">
                     {next && (
                         <>
-                            <p className="text-right text-slate-500">next</p>
+                            <p className="text-slate-500">next</p>
                             <Link to={`/blog/${next.fields.slug}`} rel="next">
                                 {next.frontmatter.title} →
                             </Link>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply text-slate-950;
+    @apply text-slate-950 bg-stone-50;
 }
 
 a {
@@ -40,6 +40,10 @@ a {
 		@apply mb-5 leading-loose;
 	}
 
+	a {
+		@apply underline;
+	}
+
 	strong {
 		@apply font-sans font-bold;
 	}
@@ -49,7 +53,7 @@ a {
 	}
 
 	code {
-		@apply inline-block font-mono rounded-sm text-sm mx-1 px-1;
+		@apply inline-block font-mono rounded-sm text-sm mx-1 px-1 bg-slate-200;
 	}
 
 	blockquote {

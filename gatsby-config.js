@@ -3,9 +3,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `雇止めアラフォーエンジニア予備試験突破を目指す`,
+    title: `雇止めおじさん予備試験突破を目指す`,
     description: 'もうすぐ雇止め。後がないアラフォーエンジニアが新天地を求め、予備試験突破を目指します。',
-    siteUrl: `https://yatoidome.github.io/yobilog`,
+    siteUrl: `https://yatoidomeojisan.github.io/yobi-log`,
     social: {
       twitter: '',
     }
@@ -45,7 +45,12 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 728,
+            }
+          },
           `gatsby-remark-prismjs`,
         ],
         mdxOptions: {
