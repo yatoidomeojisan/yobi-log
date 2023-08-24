@@ -32,6 +32,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "gh-pages": "^6.0.0",
     "moment": "^2.29.4",
+    "node-libs-browser": "^2.2.1",
     "postcss": "^8.4.28",
     "preline": "^1.9.0",
     "react": "^18.2.0",
