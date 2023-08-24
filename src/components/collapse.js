@@ -15,11 +15,11 @@ const Collapse = ({ title, children }) => {
             <button class="hs-collapse-toggle py-3 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-left text-slate-950 transition-all hover:text-indigo-900 group" id={`hs-basic-collapse-${uuid}`} data-hs-collapse={`#hs-basic-collapse-heading-${uuid}`} onClick={chageFlag}>
                 <span>{title}</span>
                 {flag ? 
-                    <svg class={`rotate-180 w-8 h-3 text-slate-950 group-hover:text-indigo-900`} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class={`rotate-180 w-8 h-3 text-slate-950 group-hover:text-indigo-900 flex-none`} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 :
-                    <svg class={`w-8 h-3 text-slate-950 group-hover:text-indigo-900`} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class={`w-8 h-3 text-slate-950 group-hover:text-indigo-900 flex-none`} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 }
