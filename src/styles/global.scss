@@ -10,6 +10,18 @@ a {
     @apply text-indigo-900;
 }
 
+.highlighter-pink {
+	@apply underline decoration-8 decoration-pink-200/70;
+	text-underline-offset: -8px;
+	text-decoration-skip-ink: none;
+}
+
+.highlighter-yellow {
+	@apply underline decoration-8 decoration-yellow-200/70;
+	text-underline-offset: -8px;
+	text-decoration-skip-ink: none;
+}
+
 .blog-content {
 
 	h1 {
@@ -45,11 +57,13 @@ a {
 	}
 
 	strong {
-		@apply font-sans font-bold;
+		@apply font-bold;
+		@extend .highlighter-pink;
 	}
 
 	em {
-		@apply italic font-medium;
+		@apply not-italic;
+		@extend .highlighter-yellow;
 	}
 
 	code {
@@ -119,5 +133,11 @@ a {
 
 	.gatsby-resp-image-wrapper {
 		@apply mb-6;
+	}
+
+	.blog-collapse {
+		.blog-collapse {
+			@apply ml-4
+		}
 	}
 }
