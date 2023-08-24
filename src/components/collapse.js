@@ -1,8 +1,9 @@
 import React, { useState } from "react"
+import { v4 as uuidv4 } from 'uuid';
 
 const Collapse = ({ title, children }) => {
-
-    const uuid = crypto.randomUUID();
+    
+    const uuid = uuidv4();
     const [flag, setFlag] = useState(false);
 
     const chageFlag = (e) => {
