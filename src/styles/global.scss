@@ -71,8 +71,7 @@ a {
 	}
 
 	blockquote {
-		@apply pl-8 py-3 pr-3 mb-6 text-slate-800 bg-gray-100;
-		border-left: 3px solid rgb(156 163 175);
+		@apply mx-4 pl-8 py-3 pr-3 mb-6 border-l-2 border-gray-400 text-slate-800 bg-gray-100;
 		position: relative;
 
 		&:before {
@@ -123,10 +122,10 @@ a {
 	}
 
 	ol { 
-		@apply list-decimal mb-6 ml-5 leading-loose;
+		@apply list-decimal mb-6 ml-4 leading-loose;
 		
 		ol {
-			@apply mb-0 ml-5;
+			@apply mb-0 ml-4;
 			list-style-type: lower-alpha;
 		}
 	}
@@ -138,6 +137,25 @@ a {
 	.blog-collapse {
 		.blog-collapse {
 			@apply ml-4
+		}
+	}
+
+	.joubun {
+		@apply bg-stone-100 border-l-2 border-stone-400 mx-4 px-4 mb-6;
+		p {
+			@apply mb-0;
+		}
+
+		ol {
+			list-style-type: decimal;
+			ol {
+				@apply ml-4;
+				list-style-type: cjk-ideographic;
+				ol {
+					@apply ml-4;
+					list-style-type: katakana-iroha;
+				}
+			}
 		}
 	}
 }
