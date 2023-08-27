@@ -12,7 +12,7 @@ const IndexPage = ({data}) => {
     return (
         <Rayout>
             <Bio />
-            <div>
+            <div className="mt-10">
                 <h2 className="text-xl mb-4">Blog</h2>
                 {posts.map(post => (
                     <div key={post.id} className="flex">

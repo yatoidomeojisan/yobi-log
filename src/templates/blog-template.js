@@ -11,7 +11,7 @@ const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
 
     return (
         <Rayout>
-            <div className="blog-header my-10">
+            <div className="blog-header mb-10">
                 <h1 className="text-3xl text-center">{post.frontmatter.title}</h1>
                 <p className="text-slate-500 text-center">{moment(post.frontmatter.date).format(`YYYY-MM-DD`)}</p>
             </div>
@@ -20,7 +20,7 @@ const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
                 {children}
             </div>
 
-            <div className="md:flex justify-between mt-10">
+            <div className="md:flex justify-between mt-10 mb-20">
                 <div className="text-left">
                     {previous && (
                         <>

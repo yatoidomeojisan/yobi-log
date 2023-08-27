@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const Bio = () => {
     return (
-        <div className="max-w-screen-md mx-auto mt-20 mb-10">
+        <div className="max-w-screen-md mx-auto">
             <h2 className="text-xl mb-4">Author</h2>
             <div className="">
                 <StaticImage src="../images/me.jpg" alt="me" imgClassName="rounded-full" className="inline-block mb-4 mr-4 float-left"/>
