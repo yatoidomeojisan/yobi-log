@@ -25,11 +25,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+  const draft = process.env.NODE_ENV === "production" ? [false] : [true, false]
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(`
     {
-      allMdx(sort: {frontmatter: {date: ASC}}, limit: 1000) {
+      allMdx(
+        filter: {frontmatter: {draft: {in: [${draft}]}}} 
+        sort: {frontmatter: {date: ASC}} 
+        limit: 1000
+      ) {
         edges {
           next {
             id
