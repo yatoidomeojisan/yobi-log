@@ -1,6 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const draft = process.env.NODE_ENV === "production" ? [false] : [true, false]
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
   
@@ -25,7 +27,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  const draft = process.env.NODE_ENV === "production" ? [false] : [true, false]
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(`
@@ -33,7 +34,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx(
         filter: {frontmatter: {draft: {in: [${draft}]}}} 
         sort: {frontmatter: {date: ASC}} 
-        limit: 1000
       ) {
         edges {
           next {
@@ -94,4 +94,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+}
+
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  // ルートページの場合のみ処理継続
+  if (page.path !== '/') {
+    return;
+  }
+
+  // いったんルートページを削除
+  deletePage(page)
+
+  // pageオブジェクトをもとにルートページを再生成
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      draft: draft,
+    },
+  })
 }

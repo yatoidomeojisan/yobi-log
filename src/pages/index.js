@@ -6,7 +6,7 @@ import { graphql, Link } from "gatsby"
 import moment from 'moment'
 
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({data}) => {
     const posts = data.allMdx.nodes;
 
     return (
@@ -30,8 +30,11 @@ export default IndexPage
 export const Head = () => <Seo title="" />
 
 export const pageQuery = graphql`
-query MyQuery {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+query MyQuery ($draft: [Boolean]!) {
+    allMdx(
+        filter: { frontmatter: { draft: { in: $draft } } }
+        sort: {frontmatter: {date: DESC}}
+    ) {
         nodes {
             id
             frontmatter {
