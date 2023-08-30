@@ -141,13 +141,22 @@ a {
 	}
 
 	.joubun {
-		@apply bg-stone-100 border-l-2 border-stone-400 mx-4 px-4 mb-6;
-		p {
+		@apply bg-stone-100 border-l-2 border-stone-400 mx-4 px-4 mb-6 py-2;
+
+		h4 {
 			@apply mb-0;
+
+			&:first-child {
+				@apply mt-0;
+
+			}
 		}
 
 		ol {
 			list-style-type: decimal;
+			&:last-child {
+				@apply mb-0;
+			}
 			ol {
 				@apply ml-4;
 				list-style-type: cjk-ideographic;
@@ -156,6 +165,10 @@ a {
 					list-style-type: katakana-iroha;
 				}
 			}
+		}
+
+		p:last-child {
+			@apply mb-0;
 		}
 	}
 
