@@ -14,6 +14,7 @@ const BlogPost = ({ data: {mdx: post} , children, pageContext }) => {
             <div className="blog-header mb-10">
                 <h1 className="text-3xl text-center">{post.frontmatter.title}</h1>
                 <p className="text-slate-500 text-center">{moment(post.frontmatter.date).format(`YYYY-MM-DD`)}</p>
+                {post.frontmatter.draft ? <p className="text-lg font-bold text-red-500  text-center">[draft]</p>: null }
             </div>
 
             <div className="blog-content overflow-x-auto">
@@ -68,6 +69,7 @@ query MyQuery($id: String) {
         frontmatter {
             date
             title
+            draft
         }
         internal {
             contentFilePath
