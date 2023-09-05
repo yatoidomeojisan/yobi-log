@@ -4,7 +4,7 @@ const Youtube = ({id}) =>{
     return (
         <div className="youtubewrapper">
            <iframe className="youtube"
-                src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${id}`}
                 title="YouTube"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
