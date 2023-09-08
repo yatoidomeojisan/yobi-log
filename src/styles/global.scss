@@ -157,12 +157,27 @@ a {
 			&:last-child {
 				@apply mb-0;
 			}
+			li {
+				p {
+					@apply mb-0;
+				}
+			}
 			ol {
 				@apply ml-4;
 				list-style-type: cjk-ideographic;
+				li {
+					p {
+						@apply mb-0;
+					}
+				}
 				ol {
 					@apply ml-4;
 					list-style-type: katakana-iroha;
+					li {
+						p {
+							@apply mb-0;
+						}
+					}
 				}
 			}
 		}
